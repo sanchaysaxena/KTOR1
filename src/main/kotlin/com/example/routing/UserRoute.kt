@@ -23,7 +23,7 @@ fun Route.userRoute(userService: UserService) {
             name = "id",
             value = createdUser.id.toString()
         )
-        call.respond(message = HttpStatusCode.Created)
+        call.respondText("customer created successfully", status = HttpStatusCode.Created)
     }
     get {
         val users = userService.findAll()
@@ -43,7 +43,7 @@ fun Route.userRoute(userService: UserService) {
         val foundUser=userService.findByID(id)
             ?:return@delete call.respond(HttpStatusCode.NotFound)
         userService.deleteUser(foundUser)
-        call.respond(message = HttpStatusCode.OK)
+        call.respondText("Customer Deleted Successfully", status = HttpStatusCode.OK)
     }
 
 }
