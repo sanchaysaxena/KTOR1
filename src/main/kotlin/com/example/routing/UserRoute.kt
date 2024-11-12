@@ -43,7 +43,9 @@ fun Route.userRoute(userService: UserService) {
         val foundUser=userService.findByID(id)
             ?:return@delete call.respond(HttpStatusCode.NotFound)
         userService.deleteUser(foundUser)
+        call.respond(message = HttpStatusCode.OK)
     }
+
 }
 
 private fun UserRequest.toModel(): User =
