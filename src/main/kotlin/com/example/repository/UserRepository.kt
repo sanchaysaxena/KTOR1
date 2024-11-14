@@ -1,6 +1,6 @@
 package com.example.repository
 
-import com.example.model.User
+import com.example.data.model.User
 import java.util.UUID
 
 class UserRepository {
@@ -8,13 +8,13 @@ class UserRepository {
 
     fun findAll():List<User> = users
 
-    fun findByID(id:UUID):User? = users.firstOrNull{it.id==id}
+    fun findByID(id:UUID): User? = users.firstOrNull{it.id==id}
 
-    fun findByUsername(userName:String):User?=users.firstOrNull { it.userName==userName }
+    fun findByUsername(userName:String): User?=users.firstOrNull { it.userName==userName }
 
     fun saveUser(user: User):Boolean=users.add(user)
 
-    fun updateUsername(user: User,userName: String):User? {
+    fun updateUsername(user: User, userName: String): User? {
         val index = users.indexOf(user)
         if(index==-1) return null
         users[index].userName = userName

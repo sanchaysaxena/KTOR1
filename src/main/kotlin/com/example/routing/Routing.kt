@@ -14,4 +14,4 @@ fun Application.configureRouting(
     }
 }
 
-//here we instruct ktor that whenever a request isd made to /api/user it should look for a handle under userRoute
+//here we instruct ktor that whenever a request is made to /api/user it should look for a handle under userRoute

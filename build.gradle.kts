@@ -29,4 +29,17 @@ dependencies {
     testImplementation(libs.kotlin.test.junit)
     implementation("io.ktor:ktor-server-auth")
     implementation("io.ktor:ktor-server-auth-jwt")
+
+    implementation("org.litote.kmongo:kmongo:4.5.1")
+    implementation("org.litote.kmongo:kmongo-coroutine:4.5.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
+
+    implementation ("org.jetbrains.exposed:exposed-core:0.31.1")
+    implementation ("org.jetbrains.exposed:exposed-dao:0.31.1")
+    implementation ("org.jetbrains.exposed:exposed-jdbc:0.31.1")
+    implementation ("org.postgresql:postgresql:42.7.2")
+    implementation ("com.zaxxer:HikariCP:4.0.3")
 }
+//postgres - provides jdbc driver(java database connectivity)
+//hikari - used to configure the DB
+//exposed - to access the DB
